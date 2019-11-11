@@ -15,6 +15,7 @@ public class SkeletonGameScene implements Scene {
 		Target click = new Target(700, 440, 521, 152);
 		List<Text> scoreTexts = new java.util.ArrayList<Text>();
 		Text scoreText = new Text(100, 27, 30, 30, "0");
+		Sound clickSound = new Sound("res/click.wav");
 
 		
 		public SkeletonGameScene() {
@@ -48,6 +49,7 @@ public class SkeletonGameScene implements Scene {
 				return pauseScene;
 			}	
 			if (click.clicked()) {
+				clickSound.play();
 				if(score.getScoreValue() == 0) {
 					score.startTime();
 				}

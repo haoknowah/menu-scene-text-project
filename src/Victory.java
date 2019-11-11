@@ -13,6 +13,7 @@ public class Victory implements Scene {
 		Target exit = new Target(1822, 0, 73, 33);
 		Text scoreText = new Text(100, 27, 30, 30, "0");
 		Text scoreTime = new Text(50, 1000, 30, 30, "0");
+		Sound win = new Sound("res/Win.wav");
 
 		
 		public Victory() {
@@ -31,6 +32,7 @@ public class Victory implements Scene {
 			this.score = score;
 			scoreText = new Text(100, 27, 30, 30, String.valueOf(score.getScoreValue()));
 			scoreTime = new Text(215, 1020, 35, 35, String.valueOf(score.getTime()));
+			win.play();
 		}
 		
 		
